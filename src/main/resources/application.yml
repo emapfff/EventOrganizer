@@ -1,0 +1,16 @@
+spring:
+  application:
+    name:
+      organizer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/events
+    username: postgres
+    password: example
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      default-schema: public
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+

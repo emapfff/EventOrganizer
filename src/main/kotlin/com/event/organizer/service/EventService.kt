@@ -46,6 +46,19 @@ class EventService(
         return request
     }
 
+    @Transactional
+    fun get(id: Long): EventResponse {
+        val event: EventEntity = eventRepository.findEventEntityById(id)
+        return EventResponse(
+            id = event.id,
+            title = event.title,
+            imgUrl = event.imgUrl,
+            time = event.time,
+            location = event.location,
+            description = event.description
+        )
+    }
+
 
     @Transactional
     fun getAll(email: String): List<EventResponse> {

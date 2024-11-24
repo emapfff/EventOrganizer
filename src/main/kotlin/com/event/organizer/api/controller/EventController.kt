@@ -19,6 +19,9 @@ class EventController(
     @GetMapping("/all/{email}")
     fun getEvents(@PathVariable email: String) = eventService.getAll(email)
 
+    @GetMapping("/{id}")
+    fun getEvent(@PathVariable id: Long) = eventService.get(id)
+
     @PatchMapping("/{id}")
     fun updateEvent(@PathVariable id: Long, @RequestBody event: EventRequest) = eventService.update(id, event)
 

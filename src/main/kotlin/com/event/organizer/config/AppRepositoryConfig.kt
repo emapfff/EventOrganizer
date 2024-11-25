@@ -12,6 +12,12 @@ class AppRepositoryConfig : RepositoryRestConfigurer {
 
         override fun configureRepositoryRestConfiguration(config: RepositoryRestConfiguration, cors: CorsRegistry) {
             config.setExposeRepositoryMethodsByDefault(false)
+            
+            cors.addMapping("/**")
+                .allowedOriginPatterns("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true)
         }
     }
 }

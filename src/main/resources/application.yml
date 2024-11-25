@@ -1,9 +1,8 @@
 spring:
   application:
-    name:
-      organizer
+    name: organizer
   datasource:
-    url: jdbc:postgresql://localhost:5432/events
+    url: jdbc:postgresql://db:5432/events
     username: postgres
     password: example
     driver-class-name: org.postgresql.Driver
@@ -14,8 +13,10 @@ spring:
     show-sql: true
     generate-ddl: true
 
+server:
+  port: 8080
+
 springdoc:
   swagger-ui:
-
     path: /swagger-ui/index.html
 
